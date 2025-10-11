@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // "Router" servira a stocker et a s'abonner au changemeent de l'URL de la page courante
 // "Routes" servira a selectionner le composant enfant correspondant a la location
-// "Route" qui prend plsieur param 
+// "Route" qui prend plusieur param 
 
 import Home from "./pages/Home";
 import Survey from './pages/Survey';
@@ -21,12 +21,12 @@ root.render(
           <Header/>
           <Routes>
             {/* "path": contient l'URL qui dirigera vers notre composant 
-                "element": va permettre de selectionner le composant a afficher*/}
+                "element": va permettre de selectionner le composant enfant a afficher*/}
               <Route path='/' element={<Home />} /> 
               <Route path='/survey/:questionNumber' element={<Survey />} />
               <Route path='/results' element={<Results />} />
               <Route path='/freelances' element={<Freelances />} />
-              <Route path='*' element={<Error />} /> {/* path='*' veut dire que si aucune cidessus n'est specifier alors diriger vers la page Error 404 */}
+              <Route path='*' element={<Error />} /> {/* path='*' veut dire que si aucune ci-dessus n'est specifier alors diriger vers la page Error 404 */}
           </Routes>
       </Router>
     

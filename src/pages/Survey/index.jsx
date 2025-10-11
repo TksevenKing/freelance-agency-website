@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"; // Ceci nous permet de recup des p
 import { Link } from "react-router-dom";
 
 function Survey() {
-    const {questionNumber} = useParams() // useParam retoure une chaine de carattere comme en Java
+    const {questionNumber} = useParams() // useParam retoure une chaine de caractere comme en Java qu'il faudra convertir en int si necessaire
     const questionNumberINT = parseInt(questionNumber)
     const precedentQuestionNumber = (questionNumberINT <= 1) ? 1 : questionNumberINT - 1
     const suivantQuestionNumber = questionNumberINT + 1

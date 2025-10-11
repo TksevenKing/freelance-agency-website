@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-// Ajoutons Header a la racine du projet dasn index.jsx pour qu'il soit visible automatiquement dans toutes nos pages puisqu'il est a la base de notre Router il fait parti du Layout
+// Ajoutons Header a la racine du projet  dans index.jsx pour qu'il soit visible automatiquement dans toutes nos pages puisqu'il est a la base de notre Router il fait parti du Layout
 function Header() {
     return (
         <nav>
