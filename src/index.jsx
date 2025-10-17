@@ -11,13 +11,21 @@ import Header from './components/Header';
 import Error from './components/Error';
 import Results from './pages/Results';
 import Freelances from './pages/Freelances';
+import { createGlobalStyle } from 'styled-components';
 
+// Créez un style global pour cela on le creer dans index.jsx et on l'imort dans nos composants avant Router
+const GlobalStyle = createGlobalStyle`
+  div {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  }
+`
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <Router>
           {/* Je met le Header ici pour qu'il fasse partie du layout ainsi visible en haut de toutes les pages */}
+          <GlobalStyle/>
           <Header/>
           <Routes>
             {/* "path": contient l'URL qui dirigera vers notre composant 
