@@ -13,10 +13,15 @@ import Results from './pages/Results';
 import Freelances from './pages/Freelances';
 import { createGlobalStyle } from 'styled-components';
 
+
 // Créez un style global pour cela on le creer dans index.jsx et on l'imort dans nos composants avant Router
 const GlobalStyle = createGlobalStyle`
   div {
     font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    
+  }
+  body {
+    margin: 0;
   }
 `
 

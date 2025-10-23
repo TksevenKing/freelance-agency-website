@@ -4,16 +4,18 @@ import styled from "styled-components"
 import colors from "../../utils/style/colors"
 
 
-// Utilisation de composant sytle Styled Components je peux mettre mon style directetement ici
+// Utilisation de composant stylee Styled Components je peux mettre mon style directetement ici
 const CardLabel = styled.span`
     color: #5843e4;
     font-size: 22px;
     font-weight: bold;
+    margin-left: 10%;
     `
 const CardImage = styled.img`
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    width: 90px;
     border-radius: 50%;
+    margin: auto;
 `
 // &:hover le '&' devant hover permet d'acceder au pseudoselector :hover dans le styled component
 const CardWrapper = styled.div`
@@ -28,6 +30,10 @@ const CardWrapper = styled.div`
         cursor: pointer;
         box-shadow: 2px 2px 10px #e2e3e9;
     }
+`
+const CardTitle = styled.span`
+    font-weight: bold;
+    text-align: center;
 `
 
 // Pour dire que voici les param de Card avec leurs Types
@@ -52,7 +58,7 @@ function Card({ label, title, picture}) {
         <CardWrapper >
             <CardLabel>{label}</CardLabel>
             <CardImage src={picture} alt="freelance" />
-            <span>{title}</span>
+            <CardTitle>{title}</CardTitle>
         </CardWrapper>
     )
 }

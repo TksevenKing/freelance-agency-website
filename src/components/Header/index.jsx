@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import colors from "../../utils/style/colors";
+import darkLogo from '../../assets/dark-logo.png'
 
 
-// Ici la syntaxe change car on l'utilise avec un let venant d'une bibliotheque d'ou les ()
+
+// Ici la syntaxe change car on l'utilise avec un Link venant d'une bibliotheque d'ou les ()
 const StyledLink = styled(Link)`
     padding: 15px;
     color: #8186a0;
@@ -16,16 +18,31 @@ const StyledLink = styled(Link)`
 
     }
 `
-
+const StyledHeader = styled.div`
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    align-items: center;
+`
+const StyledLogo = styled.img`
+    height:70px;
+`
 // Ajoutons Header a la racine du projet  dans index.jsx pour qu'il soit visible automatiquement dans toutes nos pages puisqu'il est a la base de notre Router il fait parti du Layout
 function Header() {
     return (
-        <nav>
-            {/* Link est Mieux pour le menu mais pas pour des redirections declencher par onClick() */}
-            <StyledLink to="/">Accueil</StyledLink>
-            <StyledLink to="/survey/5" $isFullLink>Questionnaire</StyledLink>
-            <StyledLink to="/freelances">Freelances</StyledLink>
-        </nav>
+        <StyledHeader>
+            <StyledLogo src={darkLogo} alt="shinyLogo" />
+            
+            <nav>
+                {/* Link est Mieux pour le menu mais pas pour des redirections declencher par onClick() */}
+                <StyledLink to="/">Accueil</StyledLink>
+                <StyledLink to="/survey/5" $isFullLink>Questionnaire</StyledLink>
+                <StyledLink to="/freelances">Freelances</StyledLink>
+            </nav>
+            
+
+        </StyledHeader>
+
     )
 }
 

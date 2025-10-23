@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    background-color: #F9F9FC;
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+}
+
+.col_text {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    font-size: 40px;
+    font-weight: bold;
+    /* align-items: ; */
+    margin: auto;
+    /* background-color: pink; */
+    height: 60%;
+    
+}
+.col_text a {
+    color: white;
+    font-size: large;
+    background-color: #5843E4;
+    border-radius: 30px;
+    padding: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-self: flex-start;
+    margin-top: 100px;
+    text-decoration: none;
+    font-weight: lighter;
+}
+.col_photo {
+    margin: auto;
+}
+.col_photo img{
+    width: 90%;
+}

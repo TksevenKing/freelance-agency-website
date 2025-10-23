@@ -1,6 +1,8 @@
 import DefaultPicture from '../../assets/profil.png'
 import Card from '../../components/Card'
 import styled from 'styled-components'
+import colors from '../../utils/style/colors'
+// import colors from '../../utils/style/colors'
 
 
 
@@ -28,25 +30,37 @@ const CardsContainer = styled.div`
     gap: 24px;
     grid-template-rows: 350px 350px;
     grid-template-columns: repeat(2, 1fr);
+    width: 60vw;
+    margin: auto;
     
+`
+const StyledTitle = styled.h2`
+    text-align: center;
+`
+const StyledSubTitle = styled.div`
+    color: ${colors.secondary};
+    text-align: center;
+    margin: 30px 30px;
 `
 
 function Freelances() {
     return (
         <div>
-            <h1> Freelances  👩·💻👨·💻👩·💻 </h1>
+            
+            <StyledTitle > Trouvez votre prestataire</StyledTitle>
+            <StyledSubTitle>Chez Shiny nous reunissons les meilleurs profils pour vous</StyledSubTitle>
             <CardsContainer>
-                {freelanceProfiles.map((profile, index) => 
-                    <Card  
+                {freelanceProfiles.map((profile, index) =>
+                    <Card
                         key={`${profile.name}-${index}`}
-                        label={profile.jobTitle} 
-                        title={profile.name} 
-                        picture={profile.picture} 
+                        label={profile.jobTitle}
+                        title={profile.name}
+                        picture={profile.picture}
                     />
-                    )}
+                )}
             </CardsContainer>
 
-            
+
         </div>
     )
 }
