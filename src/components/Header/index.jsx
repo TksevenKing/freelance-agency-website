@@ -6,6 +6,7 @@ import darkLogo from '../../assets/dark-logo.png'
 
 
 // Ici la syntaxe change car on l'utilise avec un Link venant d'une bibliotheque d'ou les ()
+// Ici on utilise le $ devant IsFullLink only because it's not une balise native si cetait un div ou autre on n'utiliserais pas le $
 const StyledLink = styled(Link)`
     padding: 15px;
     color: #8186a0;
