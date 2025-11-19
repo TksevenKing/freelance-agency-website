@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import {  useEffect, useState } from 'react'
 import { Loader } from '../../utils/style/Atoms'
+import { useTheme } from '../../utils/hooks'
 // import colors from '../../utils/style/colors'
 
 
@@ -38,14 +39,17 @@ const CardsContainer = styled.div`
 `
 const StyledTitle = styled.h2`
     text-align: center;
+    color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
 `
 const StyledSubTitle = styled.div`
     color: ${colors.secondary};
     text-align: center;
     margin: 30px 30px;
+    color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
 `
 
 function Freelances() {
+    const { theme } = useTheme()
     const [isDataLoading, setIsDataLoading]  = useState(false)
     const [error, setError] = useState(null)
     // creation du state pour stocker les donnee venant de l"api
@@ -72,19 +76,23 @@ function Freelances() {
         fetchProfiles()
     }, [])
 
+    // const freelancersList = profileData
+
     if(error) {
             return <span>Oups il ya eu une erreur </span>
         }
+
+        
 
     return (
         <div>
             
             <StyledTitle > Trouvez votre prestataire</StyledTitle>
             <StyledSubTitle>Chez Shiny nous reunissons les meilleurs profils pour vous</StyledSubTitle>
-            { /* Ici n'affichez le contenu que si le chargement est fifi et que le Loader disparait */
+            { /* Ici n'affichez le contenu que si le chargement est fini et que le Loader disparait */
                 isDataLoading ? (
                     
-                    <Loader />
+                    <Loader theme={theme} />
                 ) : (
                 <CardsContainer>
                     {profileData.map((profile, index) =>

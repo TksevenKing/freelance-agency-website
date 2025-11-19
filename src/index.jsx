@@ -11,38 +11,38 @@ import Header from './components/Header';
 import Error from './components/Error';
 import Results from './pages/Results';
 import Freelances from './pages/Freelances';
-import { createGlobalStyle } from 'styled-components';
+import { SurveyProvider, ThemeProvider } from './utils/context';
+import Footer from './components/Footer';
+import GlobalStyle from './utils/style/GlobalStyle';
 
 
-// Créez un style global pour cela on le creer dans index.jsx et on l'imort dans nos composants avant Router
-const GlobalStyle = createGlobalStyle`
-  div {
-    font-family: 'Trebuchet MS', Helvetica, sans-serif;
-    
-  }
-  body {
-    margin: 0;
-  }
-`
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Router>
-          {/* Je met le Header ici pour qu'il fasse partie du layout ainsi visible en haut de toutes les pages */}
-          <GlobalStyle/>
-          <Header/>
+    <Router>
+      {/* Je met le Header ici pour qu'il fasse partie du layout ainsi visible en haut de toutes les pages */}
+      <ThemeProvider>
+        <GlobalStyle />
+        <SurveyProvider>
+          <Header />
           <Routes>
             {/* "path": contient l'URL qui dirigera vers notre composant 
                 "element": va permettre de selectionner le composant enfant a afficher*/}
-              <Route path='/' element={<Home />} /> 
-              <Route path='/survey/:questionNumber' element={<Survey />} />
-              <Route path='/results' element={<Results />} />
-              <Route path='/freelances' element={<Freelances />} />
-              <Route path='*' element={<Error />} /> {/* path='*' veut dire que si aucune ci-dessus n'est specifier alors diriger vers la page Error 404 */}
+            <Route path='/' element={<Home />} />
+            <Route path='/survey/:questionNumber' element={<Survey />} />
+            <Route path='/results' element={<Results />} />
+            <Route path='/freelances' element={<Freelances />} />
+            <Route path='*' element={<Error />} /> {/* path='*' veut dire que si aucune ci-dessus n'est specifier alors diriger vers la page Error 404 */}
           </Routes>
-      </Router>
-    
+          <Footer />
+        </SurveyProvider>
+
+
+      </ThemeProvider>
+
+    </Router>
+
   </React.StrictMode>
 );
 
